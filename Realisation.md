@@ -5,13 +5,13 @@
 1. Откройте терминал.
 2. Перейдите в директорию вашего проекта:
   
-```bash
+```
 cd путь/к/вашему/проекту
 ```
 
 3. Инициализируйте Git-репозиторий (если ещё не инициализирован):
   
-```bash
+```
 git init
 ```
 
@@ -20,13 +20,13 @@ git init
 Действия:
 1. Перейдите в папку с хуками Git:
   
-```bash
+```
 cd .git/hooks
 ```
 
 2. Создайте файл `pre-commit`:
   
-```bash
+```
 touch pre-commit
 ```
 
@@ -35,13 +35,13 @@ touch pre-commit
 Где выполнять: **Терминал** или любой текстовый редактор
 
 1. Откройте файл `pre-commit` : 
-     ```bash
+     ```
      nano pre-commit
      ```
   
 2. Вставьте следующий код в файл `pre-commit`:
 
-```bash
+```
 #!/bin/bash
 
 FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.txt$')
@@ -88,7 +88,7 @@ exit 0
 
 1. В терминале, находясь в папке `.git/hooks`, выполните команду:
 
-```bash
+```
 chmod +x pre-commit
 ```
 
@@ -96,19 +96,19 @@ chmod +x pre-commit
 
 1. Создайте тестовый `.txt` файл без требуемого содержания:
   
-```bash
+```
 echo "Test file content" > test.txt
 ```
    
 2. Добавьте файл в индекс Git:
   
-```bash
+```
 git add test.txt
 ```
 
 3. Попытайтесь закоммитить файл:
   
-```bash
+```
 git commit -m "Проверка хука без подписи автора"
 ```
 
@@ -116,19 +116,19 @@ git commit -m "Проверка хука без подписи автора"
 
 4. Добавьте строку `Author` в файл:
   
-```bash
+```
 echo "Author: Test User" >> test.txt
 ```
 
 5. Добавьте изменённый файл в индекс Git:
   
-```bash
+```
 git add test.txt
 ```
 
 6. Попытайтесь повторно закоммитить:
   
-```bash
+```
 git commit -m "Проверка хука с подписью автора"
 ```
 
@@ -141,14 +141,14 @@ git commit -m "Проверка хука с подписью автора"
 
 1. Установите Git Flow:
   
-```bash
+```
 sudo apt-get update
 sudo apt-get install git-flow
 ```
 
 2. Проверьте успешную установку Git Flow:
   
-```bash
+```
 git flow version
 ```
 
@@ -158,13 +158,13 @@ git flow version
 
 1. Перейдите в корень вашего Git-репозитория (если вы ещё не там):
   
-```bash
+```
 cd путь/к/вашему/репозиторию
 ```
 
 2. Инициализируйте Git Flow:
   
-```bash
+```
 git flow init
 ```
 
@@ -176,7 +176,7 @@ git flow init
 
 1. Запустите создание новой функциональной ветки:
   
-```bash
+```
 git flow feature start task-management
 ```
 
@@ -201,13 +201,13 @@ def create_task(title, description):
 
 1. Добавьте файл в индекс Git:
   
-```bash
+```
 git add task_manager.py
 ```
 
 2. Выполните коммит с сообщением:
   
-```bash
+```
 git commit -m "Добавлен функционал управления задачами"
 ```
 
@@ -215,7 +215,7 @@ git commit -m "Добавлен функционал управления зад
 
 1. Завершите функциональную ветку и слейте её в `develop`:
   
-```bash
+```
 git flow feature finish task-management
 ```
 
@@ -227,13 +227,13 @@ git flow feature finish task-management
 
 1. Переключитесь на ветку `develop` (если вы ещё не там):
   
-```bash
+```
 git checkout develop
 ```
 
 2. Запустите процесс создания релиза:
   
-```bash
+```
 git flow release start v1.0.0
 ```
 
@@ -243,24 +243,24 @@ git flow release start v1.0.0
 
 1. Jбновите файл `version.txt`:
 
-```bash
+```
 nano version.txt
 ```
 
-```bash
+```
 v1.0.0
 Author
 ```
 
 2. Сохраните файл и добавьте его в индекс Git:
 
-```bash
+```
 git add version.txt
 ```
 
 3. Выполните коммит:
 
-```bash
+```
 git commit -m "Обновлена версия для релиза v1.0.0"
 ```
 
@@ -268,7 +268,7 @@ git commit -m "Обновлена версия для релиза v1.0.0"
 
 1. Завершите релизную ветку и слейте изменения в `main` и `develop`:
   
-```bash
+```
 git flow release finish v1.0.0
 ```
 
